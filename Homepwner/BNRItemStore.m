@@ -52,4 +52,12 @@
     return self.privateItems;
 }
 
+- (BNRItem *)createItem
+{
+    BNRItem *item = [BNRItem randomItem];
+    [self.privateItems addObject:item];
+    
+    return item;
+}
+
 @end
