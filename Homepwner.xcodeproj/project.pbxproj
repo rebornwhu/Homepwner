@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		891F21FE1B2D2357000ACA72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F21FD1B2D2357000ACA72 /* main.m */; };
-		891F22011B2D2357000ACA72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22001B2D2357000ACA72 /* AppDelegate.m */; };
+		891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22001B2D2357000ACA72 /* BNRAppDelegate.m */; };
 		891F22041B2D2357000ACA72 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22031B2D2357000ACA72 /* ViewController.m */; };
 		891F22071B2D2357000ACA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891F22051B2D2357000ACA72 /* Main.storyboard */; };
 		891F22091B2D2357000ACA72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891F22081B2D2357000ACA72 /* Images.xcassets */; };
 		891F220C1B2D2357000ACA72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891F220A1B2D2357000ACA72 /* LaunchScreen.xib */; };
 		891F22181B2D2357000ACA72 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22171B2D2357000ACA72 /* HomepwnerTests.m */; };
+		89370BC01B2E735600438DD3 /* BNRItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89370BBF1B2E735600438DD3 /* BNRItemsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +31,8 @@
 		891F21F81B2D2357000ACA72 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891F21FC1B2D2357000ACA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		891F21FD1B2D2357000ACA72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		891F21FF1B2D2357000ACA72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		891F22001B2D2357000ACA72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		891F21FF1B2D2357000ACA72 /* BNRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRAppDelegate.h; sourceTree = "<group>"; };
+		891F22001B2D2357000ACA72 /* BNRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRAppDelegate.m; sourceTree = "<group>"; };
 		891F22021B2D2357000ACA72 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		891F22031B2D2357000ACA72 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		891F22061B2D2357000ACA72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +41,8 @@
 		891F22111B2D2357000ACA72 /* HomepwnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomepwnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891F22161B2D2357000ACA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		891F22171B2D2357000ACA72 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
+		89370BBE1B2E735600438DD3 /* BNRItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemsTableViewController.h; sourceTree = "<group>"; };
+		89370BBF1B2E735600438DD3 /* BNRItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +84,12 @@
 		891F21FA1B2D2357000ACA72 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
-				891F21FF1B2D2357000ACA72 /* AppDelegate.h */,
-				891F22001B2D2357000ACA72 /* AppDelegate.m */,
+				891F21FF1B2D2357000ACA72 /* BNRAppDelegate.h */,
+				891F22001B2D2357000ACA72 /* BNRAppDelegate.m */,
 				891F22021B2D2357000ACA72 /* ViewController.h */,
 				891F22031B2D2357000ACA72 /* ViewController.m */,
+				89370BBE1B2E735600438DD3 /* BNRItemsTableViewController.h */,
+				89370BBF1B2E735600438DD3 /* BNRItemsTableViewController.m */,
 				891F22051B2D2357000ACA72 /* Main.storyboard */,
 				891F22081B2D2357000ACA72 /* Images.xcassets */,
 				891F220A1B2D2357000ACA72 /* LaunchScreen.xib */,
@@ -220,8 +225,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				891F22041B2D2357000ACA72 /* ViewController.m in Sources */,
-				891F22011B2D2357000ACA72 /* AppDelegate.m in Sources */,
+				891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */,
 				891F21FE1B2D2357000ACA72 /* main.m in Sources */,
+				89370BC01B2E735600438DD3 /* BNRItemsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +422,7 @@
 				891F221D1B2D2357000ACA72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		891F221E1B2D2357000ACA72 /* Build configuration list for PBXNativeTarget "HomepwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				891F22201B2D2357000ACA72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
