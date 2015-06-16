@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		891F21FE1B2D2357000ACA72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F21FD1B2D2357000ACA72 /* main.m */; };
 		891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22001B2D2357000ACA72 /* BNRAppDelegate.m */; };
-		891F22041B2D2357000ACA72 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22031B2D2357000ACA72 /* ViewController.m */; };
 		891F22071B2D2357000ACA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891F22051B2D2357000ACA72 /* Main.storyboard */; };
 		891F22091B2D2357000ACA72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891F22081B2D2357000ACA72 /* Images.xcassets */; };
 		891F220C1B2D2357000ACA72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891F220A1B2D2357000ACA72 /* LaunchScreen.xib */; };
@@ -35,8 +34,6 @@
 		891F21FD1B2D2357000ACA72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		891F21FF1B2D2357000ACA72 /* BNRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRAppDelegate.h; sourceTree = "<group>"; };
 		891F22001B2D2357000ACA72 /* BNRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRAppDelegate.m; sourceTree = "<group>"; };
-		891F22021B2D2357000ACA72 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		891F22031B2D2357000ACA72 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		891F22061B2D2357000ACA72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		891F22081B2D2357000ACA72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		891F220B1B2D2357000ACA72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -92,8 +89,6 @@
 			children = (
 				891F21FF1B2D2357000ACA72 /* BNRAppDelegate.h */,
 				891F22001B2D2357000ACA72 /* BNRAppDelegate.m */,
-				891F22021B2D2357000ACA72 /* ViewController.h */,
-				891F22031B2D2357000ACA72 /* ViewController.m */,
 				89370BCD1B2E8D7700438DD3 /* BNRItem.h */,
 				89370BCE1B2E8D7700438DD3 /* BNRItem.m */,
 				89370BC71B2E845700438DD3 /* BNRItemStore.h */,
@@ -234,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				891F22041B2D2357000ACA72 /* ViewController.m in Sources */,
 				89370BCF1B2E8D7700438DD3 /* BNRItem.m in Sources */,
 				891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */,
 				891F21FE1B2D2357000ACA72 /* main.m in Sources */,
