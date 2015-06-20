@@ -60,7 +60,6 @@
     return [[[BNRItemStore sharedStore] allItems] count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
@@ -74,7 +73,6 @@
     
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
