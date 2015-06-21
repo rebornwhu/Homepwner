@@ -82,7 +82,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[BNRItemStore sharedStore] allItems] count] + 1;
+    return [self getAllItemsCount] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,7 +90,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                             forIndexPath:indexPath];
     
-    if (indexPath.row < [[[BNRItemStore sharedStore] allItems] count]) {
+    if (indexPath.row < [self getAllItemsCount]) {
         
         NSArray *items = [[BNRItemStore sharedStore] allItems];
         
@@ -117,9 +117,6 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    if (destinationIndexPath.row == [[[BNRItemStore sharedStore] allItems] count])
-        return;
-        
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row
                                         toIndex:destinationIndexPath.row];
 }
@@ -132,20 +129,20 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
 {
-    NSUInteger numberOfObjects = [[[BNRItemStore sharedStore] allItems] count];
+    NSUInteger numberOfObjects = [self getAllItemsCount];
     
     if ( (proposedDestinationIndexPath.row+1==numberOfObjects) || (sourceIndexPath.row+1==numberOfObjects) ) {
         NSLog(@"HERE");
         return sourceIndexPath;
     }
     else {
-        NSLog(@"count=%lu %ldd", (unsigned long)[[[BNRItemStore sharedStore] allItems] count], (long)proposedDestinationIndexPath.row);
+        NSLog(@"count=%lu %ld", (unsigned long)[self getAllItemsCount], (long)proposedDestinationIndexPath.row);
         return proposedDestinationIndexPath;
     }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row >= [[[BNRItemStore sharedStore] allItems] count])
+    if (indexPath.row >= [self getAllItemsCount])
         return NO;
     return YES;
 }
@@ -154,6 +151,5 @@
 {
     return [[[BNRItemStore sharedStore] allItems] count];
 }
-
 
 @end
