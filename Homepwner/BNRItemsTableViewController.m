@@ -82,7 +82,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[BNRItemStore sharedStore] allItems] count];
+    return [[[BNRItemStore sharedStore] allItems] count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,11 +90,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                             forIndexPath:indexPath];
     
-    NSArray *items = [[BNRItemStore sharedStore] allItems];
-    
-    BNRItem *item = items[indexPath.row];
-    
-    cell.textLabel.text = [item description];
+    if (indexPath.row < [[[BNRItemStore sharedStore] allItems] count]) {
+        
+        NSArray *items = [[BNRItemStore sharedStore] allItems];
+        
+        BNRItem *item = items[indexPath.row];
+        
+        cell.textLabel.text = [item description];
+    }
+    else
+        cell.textLabel.text = @"No more items!";
     
     return cell;
 }
@@ -112,6 +117,9 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
+    if (destinationIndexPath.row == [[[BNRItemStore sharedStore] allItems] count])
+        return;
+        
     [[BNRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row
                                         toIndex:destinationIndexPath.row];
 }
@@ -120,6 +128,31 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"Remove";
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    NSUInteger numberOfObjects = [[[BNRItemStore sharedStore] allItems] count];
+    
+    if ( (proposedDestinationIndexPath.row+1==numberOfObjects) || (sourceIndexPath.row+1==numberOfObjects) ) {
+        NSLog(@"HERE");
+        return sourceIndexPath;
+    }
+    else {
+        NSLog(@"count=%lu %ldd", (unsigned long)[[[BNRItemStore sharedStore] allItems] count], (long)proposedDestinationIndexPath.row);
+        return proposedDestinationIndexPath;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row >= [[[BNRItemStore sharedStore] allItems] count])
+        return NO;
+    return YES;
+}
+
+- (NSInteger)getAllItemsCount
+{
+    return [[[BNRItemStore sharedStore] allItems] count];
 }
 
 
