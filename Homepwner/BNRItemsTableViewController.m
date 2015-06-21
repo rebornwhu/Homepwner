@@ -36,7 +36,14 @@
 
 - (IBAction)toogleEditingMode:(id)sender
 {
-    
+    if (self.isEditing) {
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        [self setEditing:NO animated:YES];
+    }
+    else {
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        [self setEditing:YES animated:YES];
+    }
 }
 
 - (instancetype)init
