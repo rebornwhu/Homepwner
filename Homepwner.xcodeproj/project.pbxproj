@@ -13,6 +13,7 @@
 		891F22091B2D2357000ACA72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 891F22081B2D2357000ACA72 /* Images.xcassets */; };
 		891F220C1B2D2357000ACA72 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891F220A1B2D2357000ACA72 /* LaunchScreen.xib */; };
 		891F22181B2D2357000ACA72 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22171B2D2357000ACA72 /* HomepwnerTests.m */; };
+		893215FD1B3658CD002AEFAD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893215FC1B3658CD002AEFAD /* HeaderView.xib */; };
 		89370BC01B2E735600438DD3 /* BNRItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89370BBF1B2E735600438DD3 /* BNRItemsTableViewController.m */; };
 		89370BC91B2E845700438DD3 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 89370BC81B2E845700438DD3 /* BNRItemStore.m */; };
 		89370BCF1B2E8D7700438DD3 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89370BCE1B2E8D7700438DD3 /* BNRItem.m */; };
@@ -40,6 +41,7 @@
 		891F22111B2D2357000ACA72 /* HomepwnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomepwnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891F22161B2D2357000ACA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		891F22171B2D2357000ACA72 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
+		893215FC1B3658CD002AEFAD /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		89370BBE1B2E735600438DD3 /* BNRItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemsTableViewController.h; sourceTree = "<group>"; };
 		89370BBF1B2E735600438DD3 /* BNRItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemsTableViewController.m; sourceTree = "<group>"; };
 		89370BC71B2E845700438DD3 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				891F22081B2D2357000ACA72 /* Images.xcassets */,
 				891F220A1B2D2357000ACA72 /* LaunchScreen.xib */,
 				891F21FB1B2D2357000ACA72 /* Supporting Files */,
+				893215FC1B3658CD002AEFAD /* HeaderView.xib */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				891F22071B2D2357000ACA72 /* Main.storyboard in Resources */,
 				891F220C1B2D2357000ACA72 /* LaunchScreen.xib in Resources */,
 				891F22091B2D2357000ACA72 /* Images.xcassets in Resources */,
+				893215FD1B3658CD002AEFAD /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

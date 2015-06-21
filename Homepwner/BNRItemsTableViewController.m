@@ -12,9 +12,32 @@
 
 @interface BNRItemsTableViewController ()
 
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+
 @end
 
 @implementation BNRItemsTableViewController
+
+- (UIView *)headerView
+{
+    if (!_headerView) {
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
+                                      owner:self
+                                    options:nil];
+    }
+    
+    return _headerView;
+}
+
+- (IBAction)addNewItem:(id)sender
+{
+    
+}
+
+- (IBAction)toogleEditingMode:(id)sender
+{
+    
+}
 
 - (instancetype)init
 {
@@ -39,6 +62,9 @@
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+    
+    UIView *header = self.headerView;
+    [self.tableView setTableHeaderView:header];
 }
 
 - (void)didReceiveMemoryWarning {
