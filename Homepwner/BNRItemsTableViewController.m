@@ -79,6 +79,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (NSInteger)getAllItemsCount
+{
+    return [[[BNRItemStore sharedStore] allItems] count];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -121,6 +127,13 @@
                                         toIndex:destinationIndexPath.row];
 }
 
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row >= [self getAllItemsCount])
+        return NO;
+    return YES;
+}
+
 #pragma mark - Table view delegate
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -131,25 +144,14 @@
 {
     NSUInteger numberOfObjects = [self getAllItemsCount];
     
-    if ( (proposedDestinationIndexPath.row+1==numberOfObjects) || (sourceIndexPath.row+1==numberOfObjects) ) {
+    if (proposedDestinationIndexPath.row + 1 > numberOfObjects) {
         NSLog(@"HERE");
         return sourceIndexPath;
     }
     else {
-        NSLog(@"count=%lu %ld", (unsigned long)[self getAllItemsCount], (long)proposedDestinationIndexPath.row);
+        NSLog(@"count=%lu %ld", [self getAllItemsCount], proposedDestinationIndexPath.row);
         return proposedDestinationIndexPath;
     }
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row >= [self getAllItemsCount])
-        return NO;
-    return YES;
-}
-
-- (NSInteger)getAllItemsCount
-{
-    return [[[BNRItemStore sharedStore] allItems] count];
 }
 
 @end
