@@ -11,10 +11,10 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="pAi-EH-i5G">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMr-cH-y0A">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMr-cH-y0A">
                     <rect key="frame" x="84" y="0.0" width="30" height="30"/>
                     <state key="normal" title="Edit">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -23,7 +23,7 @@
                         <action selector="toogleEditingMode:" destination="-1" eventType="touchUpInside" id="0Wm-OK-2Vh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-4O-hDq">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-4O-hDq">
                     <rect key="frame" x="490" y="0.0" width="31" height="30"/>
                     <state key="normal" title="New">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,17 +35,17 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="JMr-cH-y0A" firstAttribute="leading" secondItem="pAi-EH-i5G" secondAttribute="leading" constant="84" id="EWt-Mr-ihp"/>
-                <constraint firstItem="Gea-4O-hDq" firstAttribute="baseline" secondItem="JMr-cH-y0A" secondAttribute="baseline" id="EZQ-Ke-FaJ"/>
-                <constraint firstAttribute="trailing" secondItem="Gea-4O-hDq" secondAttribute="trailing" constant="79" id="k2X-yd-RAv"/>
-                <constraint firstItem="JMr-cH-y0A" firstAttribute="top" secondItem="pAi-EH-i5G" secondAttribute="top" constant="23" id="w1B-q6-TA8"/>
+                <constraint firstAttribute="trailing" secondItem="Gea-4O-hDq" secondAttribute="trailing" constant="79" id="43E-qp-wtm"/>
+                <constraint firstItem="JMr-cH-y0A" firstAttribute="leading" secondItem="pAi-EH-i5G" secondAttribute="leading" constant="84" id="U0L-dF-E6X"/>
+                <constraint firstItem="Gea-4O-hDq" firstAttribute="baseline" secondItem="JMr-cH-y0A" secondAttribute="baseline" id="XJP-C8-2r5"/>
+                <constraint firstItem="Gea-4O-hDq" firstAttribute="top" secondItem="pAi-EH-i5G" secondAttribute="top" id="gAZ-MO-9V5"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="647" y="-261"/>
+            <point key="canvasLocation" x="647" y="-271"/>
         </view>
     </objects>
 </document>
