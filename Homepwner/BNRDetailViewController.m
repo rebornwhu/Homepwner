@@ -48,6 +48,10 @@
     item.valueInDollars = [self.valueField.text intValue];
 }
 
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
+    [self.view endEditing:YES];
+}
+
 #pragma mark - Custom methods
 - (void)setItem:(BNRItem *)item
 {
