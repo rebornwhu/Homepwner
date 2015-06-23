@@ -48,4 +48,11 @@
     item.valueInDollars = [self.valueField.text intValue];
 }
 
+#pragma mark - Custom methods
+- (void)setItem:(BNRItem *)item
+{
+    _item = item;
+    self.navigationItem.title = _item.itemName;
+}
+
 @end
