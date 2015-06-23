@@ -58,6 +58,11 @@
     if (self) {
         UINavigationItem *navItem = self.navigationItem;
         navItem.title = @"Homepwner";
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+        navItem.rightBarButtonItem = bbi;
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     
     return self;
