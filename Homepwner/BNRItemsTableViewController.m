@@ -79,6 +79,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Custom methods
 
 - (NSInteger)getAllItemsCount
 {
@@ -127,7 +128,6 @@
                                         toIndex:destinationIndexPath.row];
 }
 
-
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row >= [self getAllItemsCount])
         return NO;
@@ -152,6 +152,13 @@
         NSLog(@"count=%lu %ld", [self getAllItemsCount], proposedDestinationIndexPath.row);
         return proposedDestinationIndexPath;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailViewController
+                                         animated:YES];
 }
 
 @end
