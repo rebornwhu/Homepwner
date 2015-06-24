@@ -8,6 +8,7 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRDatePickerViewController.h"
 
 @interface BNRDetailViewController ()
 
@@ -19,6 +20,12 @@
 @end
 
 @implementation BNRDetailViewController
+
+- (IBAction)changeDate:(id)sender {
+    BNRDatePickerViewController *datePickerVc = [[BNRDatePickerViewController alloc] init];
+    [self.navigationController pushViewController:datePickerVc
+                                         animated:YES];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {    

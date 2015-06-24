@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class BNRItem;
+@class BNRDatePickerViewController;
 
 @interface BNRDetailViewController : UIViewController
 
