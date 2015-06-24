@@ -10,4 +10,6 @@
 
 @interface BNRDatePickerViewController : UIViewController
 
+@property (nonatomic, strong) NSDate *date;
+
 @end

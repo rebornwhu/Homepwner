@@ -21,12 +21,6 @@
 
 @implementation BNRDetailViewController
 
-- (IBAction)changeDate:(id)sender {
-    BNRDatePickerViewController *datePickerVc = [[BNRDatePickerViewController alloc] init];
-    [self.navigationController pushViewController:datePickerVc
-                                         animated:YES];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {    
     BNRItem *item = self.item;
@@ -64,6 +58,13 @@
 {
     _item = item;
     self.navigationItem.title = _item.itemName;
+}
+
+- (IBAction)changeDate:(id)sender {
+    BNRDatePickerViewController *datePickerVc = [[BNRDatePickerViewController alloc] init];
+    datePickerVc.date = [self.item dateCreated];
+    [self.navigationController pushViewController:datePickerVc
+                                         animated:YES];
 }
 
 @end
