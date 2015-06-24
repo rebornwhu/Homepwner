@@ -62,7 +62,7 @@
 
 - (IBAction)changeDate:(id)sender {
     BNRDatePickerViewController *datePickerVc = [[BNRDatePickerViewController alloc] init];
-    datePickerVc.date = [self.item dateCreated];
+    datePickerVc.item = self.item;
     [self.navigationController pushViewController:datePickerVc
                                          animated:YES];
 }

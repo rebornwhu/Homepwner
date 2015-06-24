@@ -7,6 +7,7 @@
 //
 
 #import "BNRDatePickerViewController.h"
+#import "BNRItem.h"
 
 @interface BNRDatePickerViewController ()
 
@@ -16,9 +17,15 @@
 
 @implementation BNRDatePickerViewController
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [self.datePicker setDate:self.date];
+    [self.datePicker setDate:self.item.dateCreated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.view endEditing:YES];
+    [self.item setDateCreated:[self.datePicker date]];
 }
 
 @end

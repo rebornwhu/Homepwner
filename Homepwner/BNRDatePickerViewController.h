@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BNRItem;
 
 @interface BNRDatePickerViewController : UIViewController
 
-@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, strong) BNRItem *item;
 
 @end
