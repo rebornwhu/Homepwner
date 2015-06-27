@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891E47801B3F418900E95A1E /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E477F1B3F418900E95A1E /* BNRImageStore.m */; };
 		891F21FE1B2D2357000ACA72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F21FD1B2D2357000ACA72 /* main.m */; };
 		891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22001B2D2357000ACA72 /* BNRAppDelegate.m */; };
 		891F22071B2D2357000ACA72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891F22051B2D2357000ACA72 /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		891E477E1B3F418900E95A1E /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		891E477F1B3F418900E95A1E /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		891F21F81B2D2357000ACA72 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		891F21FC1B2D2357000ACA72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		891F21FD1B2D2357000ACA72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				894C4DC41B3A5A0D00B82AF0 /* BNRDatePickerViewController.h */,
 				894C4DC51B3A5A0D00B82AF0 /* BNRDatePickerViewController.m */,
 				894C4DC61B3A5A0D00B82AF0 /* BNRDatePickerViewController.xib */,
+				891E477E1B3F418900E95A1E /* BNRImageStore.h */,
+				891E477F1B3F418900E95A1E /* BNRImageStore.m */,
 				891F22051B2D2357000ACA72 /* Main.storyboard */,
 				891F22081B2D2357000ACA72 /* Images.xcassets */,
 				891F220A1B2D2357000ACA72 /* LaunchScreen.xib */,
@@ -251,6 +256,7 @@
 				8977C53B1B38F98B006AD4D8 /* BNRDetailViewController.m in Sources */,
 				89370BCF1B2E8D7700438DD3 /* BNRItem.m in Sources */,
 				891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */,
+				891E47801B3F418900E95A1E /* BNRImageStore.m in Sources */,
 				891F21FE1B2D2357000ACA72 /* main.m in Sources */,
 				89370BC01B2E735600438DD3 /* BNRItemsTableViewController.m in Sources */,
 				89370BC91B2E845700438DD3 /* BNRItemStore.m in Sources */,
