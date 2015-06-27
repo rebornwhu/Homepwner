@@ -10,12 +10,14 @@
 #import "BNRItem.h"
 #import "BNRDatePickerViewController.h"
 
-@interface BNRDetailViewController ()
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UILabel *dateField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end
 
@@ -53,6 +55,15 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    self.imageView.image = image;
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 #pragma mark - Custom methods
 - (void)setItem:(BNRItem *)item
 {
@@ -60,11 +71,28 @@
     self.navigationItem.title = _item.itemName;
 }
 
-- (IBAction)changeDate:(id)sender {
+- (IBAction)changeDate:(id)sender
+{
     BNRDatePickerViewController *datePickerVc = [[BNRDatePickerViewController alloc] init];
     datePickerVc.item = self.item;
     [self.navigationController pushViewController:datePickerVc
                                          animated:YES];
+}
+
+- (IBAction)takePicture:(id)sender
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    else
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    imagePicker.delegate = self;
+    
+    [self presentViewController:imagePicker
+                       animated:YES
+                     completion:nil];
+    
 }
 
 @end
