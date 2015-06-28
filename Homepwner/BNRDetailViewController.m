@@ -115,5 +115,12 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)clearImage:(id)sender {
+    self.imageView.image = nil;
+    
+    NSString *imageKey = self.item.itemKey;
+    [[BNRImageStore sharedStore] deleteImageForKey:imageKey];
+}
+
 
 @end
