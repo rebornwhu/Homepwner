@@ -9,6 +9,7 @@
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
 #import "BNRDatePickerViewController.h"
+#import "BNRImageStore.h"
 
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -39,6 +40,10 @@
     }
     
     self.dateField.text = [dateFormatter stringFromDate:item.dateCreated];
+    
+    NSString *imageKey = self.item.itemKey;
+    UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
+    self.imageView.image = imageToDisplay;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -59,6 +64,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    [[BNRImageStore sharedStore] setImage:image
+                                   forKey:self.item.itemKey];
+   
     self.imageView.image = image;
     [self dismissViewControllerAnimated:YES
                              completion:nil];
