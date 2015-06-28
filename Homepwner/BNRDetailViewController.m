@@ -11,7 +11,7 @@
 #import "BNRDatePickerViewController.h"
 #import "BNRImageStore.h"
 
-@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
@@ -73,6 +73,13 @@
                              completion:nil];
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 #pragma mark - Custom methods
 - (void)setItem:(BNRItem *)item
 {
@@ -103,5 +110,10 @@
                      completion:nil];
     
 }
+
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
+}
+
 
 @end
