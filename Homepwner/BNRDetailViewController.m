@@ -63,7 +63,7 @@
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = info[UIImagePickerControllerEditedImage];
     
     [[BNRImageStore sharedStore] setImage:image
                                    forKey:self.item.itemKey];
@@ -98,6 +98,7 @@
 - (IBAction)takePicture:(id)sender
 {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.allowsEditing = YES;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
     else
@@ -108,7 +109,6 @@
     [self presentViewController:imagePicker
                        animated:YES
                      completion:nil];
-    
 }
 
 - (IBAction)backgroundTapped:(id)sender {
