@@ -131,7 +131,7 @@
         return sourceIndexPath;
     }
     else {
-        NSLog(@"count=%lu %ld", [self getAllItemsCount], proposedDestinationIndexPath.row);
+        NSLog(@"count=%lu %ld", (long)[self getAllItemsCount], (long)proposedDestinationIndexPath.row);
         return proposedDestinationIndexPath;
     }
 }
