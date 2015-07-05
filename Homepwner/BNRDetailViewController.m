@@ -19,13 +19,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @end
 
 @implementation BNRDetailViewController
 
 - (void)viewWillAppear:(BOOL)animated
-{    
+{
+    UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
+    [self prepareViewsForOrientation:io];
+    
     BNRItem *item = self.item;
     
     self.nameField.text = item.itemName;
@@ -58,6 +62,11 @@
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event {
     [self.view endEditing:YES];
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self prepareViewsForOrientation:toInterfaceOrientation];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -120,6 +129,22 @@
     
     NSString *imageKey = self.item.itemKey;
     [[BNRImageStore sharedStore] deleteImageForKey:imageKey];
+}
+
+- (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return;
+    }
+    
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        self.imageView.hidden = YES;
+        self.cameraButton.enabled = NO;
+    }
+    else {
+        self.imageView.hidden = NO;
+        self.cameraButton.enabled = YES;
+    }
 }
 
 
