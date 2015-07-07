@@ -11,7 +11,7 @@
 #import "BNRDatePickerViewController.h"
 #import "BNRImageStore.h"
 
-@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
+
+@property (strong, nonatomic) UIPopoverController *imagePickerPopover;
 
 @end
 
@@ -78,8 +80,15 @@
                                    forKey:self.item.itemKey];
    
     self.imageView.image = image;
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    
+    if (self.imagePickerPopover) {
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+    }
+    else {
+        [self dismissViewControllerAnimated:YES
+                                 completion:nil];
+    }
 }
 
 #pragma mark - UITextFieldDelegate
@@ -106,6 +115,12 @@
 
 - (IBAction)takePicture:(id)sender
 {
+    if ([self.imagePickerPopover isPopoverVisible]) {
+        [self.imagePickerPopover dismissPopoverAnimated:YES];
+        self.imagePickerPopover = nil;
+        return;
+    }
+    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.allowsEditing = YES;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -115,9 +130,25 @@
     
     imagePicker.delegate = self;
     
-    [self presentViewController:imagePicker
-                       animated:YES
-                     completion:nil];
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        self.imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        self.imagePickerPopover.delegate = self;
+        [self.imagePickerPopover presentPopoverFromBarButtonItem:sender
+                                        permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                        animated:YES];
+    }
+    else {
+        [self presentViewController:imagePicker
+                           animated:YES
+                         completion:nil];
+    }
+    
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    NSLog(@"User dismissed popover");
+    self.imagePickerPopover = nil;
 }
 
 - (IBAction)backgroundTapped:(id)sender {
