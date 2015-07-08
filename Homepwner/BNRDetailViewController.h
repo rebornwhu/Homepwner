@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) BNRItem *item;
 
+- (instancetype)initForNewItem:(BOOL)isNew;
+
 @end
