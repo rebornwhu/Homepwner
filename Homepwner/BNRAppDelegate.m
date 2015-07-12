@@ -7,7 +7,7 @@
 //
 
 #import "BNRAppDelegate.h"
-#import "BNRItemsTableViewController.h"
+#import "BNRItemsViewController.h"
 
 @interface BNRAppDelegate ()
 
@@ -20,7 +20,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    BNRItemsTableViewController *itemsViewController = [[BNRItemsTableViewController alloc] init];
+    BNRItemsViewController *itemsViewController = [[BNRItemsViewController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
     

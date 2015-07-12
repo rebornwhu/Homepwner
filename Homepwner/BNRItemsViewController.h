@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BNRDetailViewController.h"
 
-@interface BNRItemsTableViewController : UITableViewController <UITableViewDelegate>
+@interface BNRItemsViewController : UITableViewController <UITableViewDelegate>
 
 @end

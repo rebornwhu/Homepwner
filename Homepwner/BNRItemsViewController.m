@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Xiao Lu. All rights reserved.
 //
 
-#import "BNRItemsTableViewController.h"
+#import "BNRItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
-@interface BNRItemsTableViewController ()
+@interface BNRItemsViewController ()
 
 @end
 
-@implementation BNRItemsTableViewController
+@implementation BNRItemsViewController
 
 - (IBAction)addNewItem:(id)sender
 {
