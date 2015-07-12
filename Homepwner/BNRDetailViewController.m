@@ -69,7 +69,7 @@
     
     self.nameField.text = item.itemName;
     self.serialNumberField.text = item.serialNumber;
-    self.valueField.text = [NSString stringWithFormat:@"%d", item.valueInDollars];
+    self.valueField.text = [NSString stringWithFormat:@"%ld", (long)item.valueInDollars];
     
     static NSDateFormatter *dateFormatter = nil;
     if (!dateFormatter) {
