@@ -42,9 +42,15 @@
 - (instancetype)initPrivate
 {
     self = [super init];
-    
-    if (self)
+    if (self) {
         _dictionary = [[NSMutableDictionary alloc] init];
+        
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self
+               selector:@selector(clearCache:)
+                   name:UIApplicationDidReceiveMemoryWarningNotification
+                 object:nil];
+    }
     
     return self;
 }
@@ -70,10 +76,13 @@
         
         result = [UIImage imageWithContentsOfFile:imagePath];
 
-        if (result)
+        if (result) {
             self.dictionary[key] = result;
-        else
-            NSLog(@"Error: unalbe to find %@", [self imagePathForKey:key]);
+        }
+        else {
+            // This "Error" wording can be a bit misleading because when new item gets initialized, it has an imageKey peroperty but it doesn't associate with any object in BNRImageStore
+            NSLog(@"Error: unalbe to find %@, could be new item initialization", [self imagePathForKey:key]);
+        }
     }
     
     return result;
@@ -98,6 +107,12 @@
     NSString *documentDirectory = [documentDirectories firstObject];
     
     return [documentDirectory stringByAppendingPathComponent:key];
+}
+
+- (void)clearCache:(NSNotification *)note
+{
+    NSLog(@"flushing %lu images out of the cache", (unsigned long)[self.dictionary count]);
+    [self.dictionary removeAllObjects];
 }
 
 @end

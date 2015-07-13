@@ -65,8 +65,8 @@
 
 - (BNRItem *)createItem
 {
-//    BNRItem *item = [BNRItem randomItem];
-    BNRItem *item = [[BNRItem alloc] init];
+    BNRItem *item = [BNRItem randomItem]; // create item with random properties
+//    BNRItem *item = [[BNRItem alloc] init]; // create item with empty properites
     [self.privateItems addObject:item];
     
     return item;
