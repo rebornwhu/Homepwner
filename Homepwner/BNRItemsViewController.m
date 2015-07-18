@@ -9,6 +9,7 @@
 #import "BNRItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRItemCell.h"
 
 @interface BNRItemsViewController ()
 
@@ -56,9 +57,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    UINib *nib = [UINib nibWithNibName:@"BNRItemCell"
+                                bundle:nil];
     
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"UITableViewCell"];
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:@"BNRItemCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,8 +90,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                                                            forIndexPath:indexPath];
+    BNRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BNRItemCell"
+                                                        forIndexPath:indexPath];
     
     if (indexPath.row < [self getAllItemsCount]) {
         
@@ -95,7 +99,9 @@
         
         BNRItem *item = items[indexPath.row];
         
-        cell.textLabel.text = [item description];
+        cell.nameLabel.text = item.itemName;
+        cell.serialNumberLabel.text = item.serialNumber;
+        cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
     }
     else
         cell.textLabel.text = @"No more items!";
