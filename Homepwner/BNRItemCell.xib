@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,28 +14,64 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yY2-sD-R9C">
-                        <rect key="frame" x="62" y="0.0" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yY2-sD-R9C">
+                        <rect key="frame" x="48" y="0.0" width="177" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="177" id="HIu-Ay-T0G"/>
+                            <constraint firstAttribute="height" constant="21" id="IIP-7B-7YF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddv-Hj-5Fx">
-                        <rect key="frame" x="62" y="22" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddv-Hj-5Fx">
+                        <rect key="frame" x="48" y="22" width="177" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="4DT-yb-Y8y"/>
+                            <constraint firstAttribute="height" constant="21" id="vXo-bx-0VC"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWS-pd-4lC">
-                        <rect key="frame" x="270" y="11" width="42" height="21"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zqm-Xu-TqQ">
+                        <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="1v4-hA-lTc"/>
+                            <constraint firstAttribute="height" constant="40" id="UlE-ay-AdP"/>
+                            <constraint firstAttribute="width" constant="40" id="bzS-6o-jPk"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWS-pd-4lC">
+                        <rect key="frame" x="233" y="11" width="77" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="gIn-GD-FGc"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqm-Xu-TqQ">
-                        <rect key="frame" x="0.0" y="-1" width="51" height="44"/>
-                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="TWS-pd-4lC" firstAttribute="leading" secondItem="yY2-sD-R9C" secondAttribute="trailing" constant="8" symbolic="YES" id="2wZ-kr-7s5"/>
+                    <constraint firstAttribute="centerY" secondItem="zqm-Xu-TqQ" secondAttribute="centerY" id="7hW-g7-Ji0"/>
+                    <constraint firstItem="yY2-sD-R9C" firstAttribute="leading" secondItem="zqm-Xu-TqQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Dks-VK-VTI"/>
+                    <constraint firstItem="yY2-sD-R9C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G6d-V2-V6R"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zqm-Xu-TqQ" secondAttribute="bottom" constant="-7" id="MIk-ev-j9v"/>
+                    <constraint firstItem="Ddv-Hj-5Fx" firstAttribute="leading" secondItem="yY2-sD-R9C" secondAttribute="leading" id="RQo-zT-caM"/>
+                    <constraint firstItem="TWS-pd-4lC" firstAttribute="leading" secondItem="Ddv-Hj-5Fx" secondAttribute="trailing" constant="8" symbolic="YES" id="UM0-24-3HQ"/>
+                    <constraint firstItem="zqm-Xu-TqQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="XyH-QZ-Geb"/>
+                    <constraint firstAttribute="centerY" secondItem="zqm-Xu-TqQ" secondAttribute="centerY" id="a7t-s3-OaZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Ddv-Hj-5Fx" secondAttribute="bottom" id="cgq-oy-MmW"/>
+                    <constraint firstItem="TWS-pd-4lC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hKE-Qt-6e1"/>
+                    <constraint firstItem="zqm-Xu-TqQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ps2-TA-zSl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TWS-pd-4lC" secondAttribute="trailing" constant="2" id="ziR-Le-VhE"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="7hW-g7-Ji0"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="nameLabel" destination="yY2-sD-R9C" id="aWd-0c-MdS"/>
