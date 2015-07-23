@@ -102,6 +102,7 @@
         cell.nameLabel.text = item.itemName;
         cell.serialNumberLabel.text = item.serialNumber;
         cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+        cell.thumbnailView.image = item.thumbnail;
     }
     else
         cell.textLabel.text = @"No more items!";
@@ -157,6 +158,7 @@
     BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:NO];
     
     NSArray *items = [[BNRItemStore sharedStore] allItems];
+    
     BNRItem *selectedItem = items[indexPath.row];
     detailViewController.item = selectedItem;
     
