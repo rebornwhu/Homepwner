@@ -94,7 +94,7 @@
                                                         forIndexPath:indexPath];
     
     if (indexPath.row < [self getAllItemsCount]) {
-        
+    
         NSArray *items = [[BNRItemStore sharedStore] allItems];
         
         BNRItem *item = items[indexPath.row];
@@ -106,7 +106,7 @@
     }
     else
         cell.textLabel.text = @"No more items!";
-    
+
     return cell;
 }
 
@@ -158,6 +158,11 @@
     BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:NO];
     
     NSArray *items = [[BNRItemStore sharedStore] allItems];
+    
+    if ([items count] <= indexPath.row) {
+        // last row is "no more items"
+        return;
+    }
     
     BNRItem *selectedItem = items[indexPath.row];
     detailViewController.item = selectedItem;
