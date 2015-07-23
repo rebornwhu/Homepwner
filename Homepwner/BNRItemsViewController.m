@@ -94,6 +94,9 @@
                                                         forIndexPath:indexPath];
     
     if (indexPath.row < [self getAllItemsCount]) {
+        
+        // add this line so new item won't be covered by "No more items!" text
+        cell.textLabel.text = @"";
     
         NSArray *items = [[BNRItemStore sharedStore] allItems];
         
