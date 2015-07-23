@@ -117,10 +117,12 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSArray *items = [[BNRItemStore sharedStore] allItems];
-        BNRItem *item = items[indexPath.row];
-        [[BNRItemStore sharedStore] removeItem:item];
-        [tableView deleteRowsAtIndexPaths:@[indexPath]
-                         withRowAnimation:UITableViewRowAnimationFade];
+        if (indexPath.row < [items count]) {
+            BNRItem *item = items[indexPath.row];
+            [[BNRItemStore sharedStore] removeItem:item];
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
 }
 
