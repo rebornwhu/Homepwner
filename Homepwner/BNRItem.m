@@ -151,7 +151,7 @@
     return descriptionString;
 }
 
-#pragma mark - NSCOding
+#pragma mark - NSCoding
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {

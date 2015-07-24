@@ -51,18 +51,31 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-94-VZq">
+                        <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="shwoImage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="248-Lh-Q6o"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="zqm-Xu-TqQ" firstAttribute="top" secondItem="nGf-94-VZq" secondAttribute="top" id="0En-x8-Zd8"/>
                     <constraint firstItem="TWS-pd-4lC" firstAttribute="leading" secondItem="yY2-sD-R9C" secondAttribute="trailing" constant="8" symbolic="YES" id="2wZ-kr-7s5"/>
                     <constraint firstAttribute="centerY" secondItem="zqm-Xu-TqQ" secondAttribute="centerY" id="7hW-g7-Ji0"/>
                     <constraint firstItem="yY2-sD-R9C" firstAttribute="leading" secondItem="zqm-Xu-TqQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Dks-VK-VTI"/>
+                    <constraint firstItem="zqm-Xu-TqQ" firstAttribute="bottom" secondItem="nGf-94-VZq" secondAttribute="bottom" id="EIT-vV-ItA"/>
                     <constraint firstItem="yY2-sD-R9C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G6d-V2-V6R"/>
+                    <constraint firstItem="zqm-Xu-TqQ" firstAttribute="trailing" secondItem="nGf-94-VZq" secondAttribute="trailing" id="Gjt-ab-zyK"/>
                     <constraint firstAttribute="bottomMargin" secondItem="zqm-Xu-TqQ" secondAttribute="bottom" constant="-7" id="MIk-ev-j9v"/>
                     <constraint firstItem="Ddv-Hj-5Fx" firstAttribute="leading" secondItem="yY2-sD-R9C" secondAttribute="leading" id="RQo-zT-caM"/>
                     <constraint firstItem="TWS-pd-4lC" firstAttribute="leading" secondItem="Ddv-Hj-5Fx" secondAttribute="trailing" constant="8" symbolic="YES" id="UM0-24-3HQ"/>
                     <constraint firstItem="zqm-Xu-TqQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-6" id="XyH-QZ-Geb"/>
                     <constraint firstAttribute="centerY" secondItem="zqm-Xu-TqQ" secondAttribute="centerY" id="a7t-s3-OaZ"/>
                     <constraint firstAttribute="bottom" secondItem="Ddv-Hj-5Fx" secondAttribute="bottom" id="cgq-oy-MmW"/>
+                    <constraint firstItem="zqm-Xu-TqQ" firstAttribute="leading" secondItem="nGf-94-VZq" secondAttribute="leading" id="fAs-XH-d0T"/>
                     <constraint firstItem="TWS-pd-4lC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hKE-Qt-6e1"/>
                     <constraint firstItem="zqm-Xu-TqQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ps2-TA-zSl"/>
                     <constraint firstAttribute="trailingMargin" secondItem="TWS-pd-4lC" secondAttribute="trailing" constant="2" id="ziR-Le-VhE"/>

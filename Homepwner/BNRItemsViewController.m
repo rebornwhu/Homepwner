@@ -106,6 +106,10 @@
         cell.serialNumberLabel.text = item.serialNumber;
         cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
         cell.thumbnailView.image = item.thumbnail;
+        
+        cell.actionBlock = ^{
+            NSLog(@"Going to show image for %@", item);
+        };
     }
     else
         cell.textLabel.text = @"No more items!";
