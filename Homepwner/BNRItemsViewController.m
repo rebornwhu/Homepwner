@@ -110,8 +110,12 @@
         cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
         cell.thumbnailView.image = item.thumbnail;
         
+        __weak BNRItemCell *weakCell = cell;
+        
         cell.actionBlock = ^{
             NSLog(@"Going to show image for %@", item);
+            
+            BNRItemCell *strongCell = weakCell;
             
             if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
                 NSString *itemKey = item.itemKey;
@@ -120,8 +124,8 @@
                 if (!img)
                     return;
                 
-                CGRect rect = [self.view convertRect:cell.thumbnailView.bounds
-                                            fromView:cell.thumbnailView];
+                CGRect rect = [self.view convertRect:strongCell.thumbnailView.bounds
+                                            fromView:strongCell.thumbnailView];
                 
                 BNRImageViewController *ivc = [[BNRImageViewController alloc] init];
                 ivc.image = img;
