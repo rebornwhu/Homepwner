@@ -10,6 +10,7 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "BNRItemCell.h"
+#import <UIKit/UIKit.h>
 
 @interface BNRItemsViewController ()
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIPopoverController *imagePopover;
 
 @end
+
 
 @implementation BNRItemsViewController
 
@@ -79,14 +81,20 @@
 }
 
 #pragma mark - Custom methods
-
 - (NSInteger)getAllItemsCount
 {
     return [[[BNRItemStore sharedStore] allItems] count];
 }
 
-#pragma mark - Table view data source
+- (void)colorCodeCell:(BNRItemCell *)cell byValue:(int)valInt
+{
+    if (valInt >= 50)
+        cell.valueLabel.textColor = [UIColor greenColor];
+    else
+        cell.valueLabel.textColor = [UIColor redColor];
+}
 
+#pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self getAllItemsCount] + 1;
 }
@@ -108,6 +116,9 @@
         cell.nameLabel.text = item.itemName;
         cell.serialNumberLabel.text = item.serialNumber;
         cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+
+        [self colorCodeCell:cell byValue:item.valueInDollars];
+        
         cell.thumbnailView.image = item.thumbnail;
         
         __weak BNRItemCell *weakCell = cell;
@@ -145,6 +156,8 @@
 
     return cell;
 }
+
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
