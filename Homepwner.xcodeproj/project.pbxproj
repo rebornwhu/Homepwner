@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89195C451B61FC1700DB0D9A /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89195C441B61FC1700DB0D9A /* BNRImageViewController.m */; };
 		891E47801B3F418900E95A1E /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E477F1B3F418900E95A1E /* BNRImageStore.m */; };
 		891F21FE1B2D2357000ACA72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F21FD1B2D2357000ACA72 /* main.m */; };
 		891F22011B2D2357000ACA72 /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 891F22001B2D2357000ACA72 /* BNRAppDelegate.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89195C431B61FC1700DB0D9A /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
+		89195C441B61FC1700DB0D9A /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
 		891E477E1B3F418900E95A1E /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		891E477F1B3F418900E95A1E /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		891F21F81B2D2357000ACA72 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,8 @@
 				8963718C1B562E3800F187FE /* BNRItemCell.h */,
 				8963718D1B562E3800F187FE /* BNRItemCell.m */,
 				8963718E1B562E3800F187FE /* BNRItemCell.xib */,
+				89195C431B61FC1700DB0D9A /* BNRImageViewController.h */,
+				89195C441B61FC1700DB0D9A /* BNRImageViewController.m */,
 				891F22051B2D2357000ACA72 /* Main.storyboard */,
 				891F22081B2D2357000ACA72 /* Images.xcassets */,
 				891F220A1B2D2357000ACA72 /* LaunchScreen.xib */,
@@ -270,6 +275,7 @@
 				891F21FE1B2D2357000ACA72 /* main.m in Sources */,
 				89370BC01B2E735600438DD3 /* BNRItemsViewController.m in Sources */,
 				89370BC91B2E845700438DD3 /* BNRItemStore.m in Sources */,
+				89195C451B61FC1700DB0D9A /* BNRImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

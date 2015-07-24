@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BNRDetailViewController.h"
+#import "BNRImageStore.h"
+#import "BNRImageViewController.h"
 
 @interface BNRItemsViewController : UITableViewController <UITableViewDelegate>
 
