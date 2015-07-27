@@ -26,7 +26,6 @@
 		89A0FB9D1B64BDC8003C0AD3 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A0FB9B1B64BDC8003C0AD3 /* Homepwner.xcdatamodeld */; };
 		89A0FBA01B64BF28003C0AD3 /* BNRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A0FB9F1B64BF28003C0AD3 /* BNRImageTransformer.m */; };
 		89FEEE761B65DFED0089CD60 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FEEE751B65DFED0089CD60 /* BNRItem.m */; };
-		89FEEE781B65E07C0089CD60 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FEEE771B65E07C0089CD60 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		89A0FB9F1B64BF28003C0AD3 /* BNRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageTransformer.m; sourceTree = "<group>"; };
 		89FEEE741B65DFED0089CD60 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		89FEEE751B65DFED0089CD60 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
-		89FEEE771B65E07C0089CD60 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89FEEE781B65E07C0089CD60 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +95,6 @@
 		891F21EF1B2D2357000ACA72 = {
 			isa = PBXGroup;
 			children = (
-				89FEEE771B65E07C0089CD60 /* CoreData.framework */,
 				891F21FA1B2D2357000ACA72 /* Homepwner */,
 				891F22141B2D2357000ACA72 /* HomepwnerTests */,
 				891F21F91B2D2357000ACA72 /* Products */,
