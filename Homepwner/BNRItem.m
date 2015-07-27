@@ -49,4 +49,16 @@
     UIGraphicsEndImageContext();
 }
 
+#pragma mark - CoreData
+- (void)awakeFromInsert
+{
+    [super awakeFromInsert];
+    
+    self.dateCreated = [NSDate date];
+    
+    NSUUID *uuid = [[NSUUID alloc] init];
+    NSString *key = [uuid UUIDString];
+    self.itemKey = key;
+}
+
 @end

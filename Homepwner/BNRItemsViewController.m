@@ -10,7 +10,9 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 #import "BNRItemCell.h"
-#import <UIKit/UIKit.h>
+#import "BNRImageStore.h"
+#import "BNRImageViewController.h"
+#import "BNRDetailViewController.h"
 
 @interface BNRItemsViewController ()
 

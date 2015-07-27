@@ -10,9 +10,14 @@
 #import "BNRItem.h"
 #import "BNRImageStore.h"
 
+@import CoreData;
+
 @interface BNRItemStore()
 
 @property (nonatomic) NSMutableArray *privateItems;
+@property (nonatomic, strong) NSMutableArray *allAssetTypes;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectModel *model;
 
 @end
 
@@ -98,7 +103,7 @@
     
     NSString *documenDirectory = [documentDirectories firstObject];
     
-    return [documenDirectory stringByAppendingPathComponent:@"items.archive"];
+    return [documenDirectory stringByAppendingPathComponent:@"store.data"];
 }
 
 - (BOOL)saveChanges
