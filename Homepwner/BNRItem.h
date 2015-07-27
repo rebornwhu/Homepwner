@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 
 @class NSManagedObject;
 
@@ -21,5 +22,7 @@
 @property (nonatomic, retain) id thumbnail;
 @property (nonatomic) int valueInDollars;
 @property (nonatomic, retain) NSManagedObject *assetType;
+
+- (void)setThumbnailFromImage:(UIImage *)image;
 
 @end
