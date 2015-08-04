@@ -73,6 +73,8 @@
         
         _context = [[NSManagedObjectContext alloc] init];
         _context.persistentStoreCoordinator = psc;
+        
+        [self loadAllItems];
     }
 
     return self;
@@ -129,6 +131,29 @@
         NSLog(@"Error saving: %@", [error localizedDescription]);
     
     return successful;
+}
+
+- (void)loadAllItems
+{
+    if (!self.privateItems) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"BNRItem"
+                                             inManagedObjectContext:self.context];
+        request.entity = e;
+        
+        NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"orderingValue"
+                                                             ascending:YES];
+        request.sortDescriptors = @[sd];
+        
+        NSError *error;
+        NSArray *result = [self.context executeFetchRequest:request
+                                                      error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+    }
 }
 
 @end
